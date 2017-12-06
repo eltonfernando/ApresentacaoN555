@@ -1,0 +1,823 @@
+% slides-exemplo-beamer
+%
+% Sáb Out  1 19:47:43 BRT 2011
+
+\documentclass[table, usenames, svgnames, dvipsnames]{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage[portuguese]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{array}
+\usepackage{mathrsfs} % Laplace
+
+%\usepackage{subfigure}
+%\usepackage{multicol}
+%\usepackage{colortbl}
+
+% ---------------------------------------------------------------------------- %
+% Definições beamer
+% ---------------------------------------------------------------------------- %
+\usetheme{Rochester}
+%\usetheme{Luebeck}
+\usecolortheme{rose}
+
+% Algumas definições para o layout
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamerfont{title}{size=\normalsize}
+\beamertemplatenavigationsymbolsempty
+
+% Podem ser utilizadas imagens no background
+%\setbeamercolor{frametitle}{bg=black}
+%\usebackgroundtemplate{\includegraphics[height=\paperheight]{figuras/back.jpg}}
+
+% Os simbolos de navegacao nao sao necessarios
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+
+%\setbeamertemplate{footline}[page number]{}
+%\setbeamertemplate{footline}[text line]{ \hfill {\insertframenumber}}
+
+% Indice para cada seção (aparece antes de cada section)
+\AtBeginSection[] 
+{
+	\begin{frame}<handout:0>
+		\frametitle{\textbf{CI 555}}
+		\footnotesize{ \tableofcontents[currentsection,hideothersubsections] }
+	\end{frame}
+}
+
+% ---------------------------------------------------------------------------- %
+% Declarações
+% ---------------------------------------------------------------------------- %
+\DeclareGraphicsExtensions{.pdf,.jpg,.png} % compilamos apenas com pdflatex
+\graphicspath{{./figuras/}} % caminho onde as figuras estarao disponiveis
+
+% Logotipo no canto superior direito
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\newcommand{\MyLogo}{%
+\begin{textblock}{}(118.5, 2.5)
+	\includegraphics[width=0.7cm]{ci-capa.png}
+\end{textblock}
+}
+
+% semitransparente
+\newcommand{\semitransp}[2][35]{\color{fg!#1}#2}
+
+% \definecolor{myred}{rgb}{0.8, 0.3, 0.3}
+\definecolor{myblue}{rgb}{0.2, 0.2, 0.70196}
+
+\usepackage{framed} % utilizado para codigo fonte
+\definecolor{shadecolor}{named}{LightGray} 
+
+% ---------------------------------------------------------------------------- %
+% Título
+% ---------------------------------------------------------------------------- %
+\title{\textbf{CI N555}}
+
+\author[Elton fernandes dos santos]{\scriptsize
+    Elton Fernandes dos Santos\\
+    Junior cavequia do Nascimento\\
+    eltonfernando90@gmail.com\\
+    jcavequia@hotmail.com
+}
+
+\subtitle{}
+
+\institute{\\[1.0mm] 
+Departamento de Engenharia elétrica\\
+UNEMAT\\
+Campos de Sinop}
+
+\date{\today}
+
+
+% ---------------------------------------------------------------------------- %
+\begin{document}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+% Primeira página: slide 0
+% ---------------------------------------------------------------------------- %
+
+{%\usebackgroundtemplate{}} 
+\begin{frame}[plain]
+
+	\begin{columns}[c]
+		\column{0.2\textwidth}
+			\hspace*{+0.5em}
+			\includegraphics[height=7.90cm]{ci-capa.png}
+		\column{0.01\textwidth}
+		\column{0.70\textwidth}
+			\titlepage
+	\end{columns}
+	\addtocounter{framenumber}{-1}
+\end{frame}
+}
+
+
+% ---------------------------------------------------------------------------- %
+% slide 1 >
+% ---------------------------------------------------------------------------- %
+\setbeamertemplate{footline}{\hrule \MyLogo } %\hfill\includegraphics[height=1.2cm]{figuras/olho1.png}}
+%\setbeamertemplate{footline}{\hfill\includegraphics[height=1.2cm]{figuras/olho1.png}}
+\setbeamertemplate{navigation symbols}{\large {\insertframenumber}}
+
+% ---------------------------------------------------------------------------- %
+%slide 2
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{N555}}
+
+	\hspace*{+4.0em}
+	\footnotesize{ \tableofcontents }
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\section{Introdução}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 3 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{ci555}}
+	%\hspace*{0.3cm}
+	\centering
+	\includegraphics[width=0.7\textwidth]{ci555.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\subsection{História}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+% slide 4 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{555}}
+	%\hspace*{0.3cm}
+	\centering
+	\includegraphics[width=1.1\textwidth]{historia.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 5 >
+% ---------------------------------------------------------------------------- %
+\section{Circuito interno}
+\subsection{Circuito interno}
+\begin{frame} 
+\frametitle{\textbf{CI 555}}
+	\hspace*{-0.5cm}
+	%\centering
+	\includegraphics[width=1.1\textwidth]{historia2.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\subsection{Informações técnicas}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 6 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Nome comercial}}
+	\hspace*{-0.5cm}
+	%\centering
+	\includegraphics[width=1.1\textwidth]{historia3.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 7 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Tabela}}
+	\hspace*{-0.5cm}
+	%\centering
+	\includegraphics[width=1.1\textwidth]{tabela.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 8 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Circuito interno}}
+	%\hspace*{-0.5cm}
+	\centering
+	\includegraphics[width=0.9\textwidth]{ciinterno.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 9 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Circuito 555}}
+	%\hspace*{-0.5cm}
+	\centering
+	\includegraphics[width=0.9\textwidth]{ciexterno.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+% slide 10 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{ Parte interna do circuito 555}}
+	\hspace*{-0.6cm}
+	\includegraphics[width=1.1\textwidth]{circuito-inter.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 11 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Tabela funcional}}
+	\hspace*{-0.6cm}
+	\includegraphics[width=1.1\textwidth]{tabela-funcional.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\subsection{Características típicas das aplicações}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 12 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{Características típicas das aplicações}}
+\begin{itemize}
+ \item Operação Monoastável
+ \item Operação Astável
+\end{itemize}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+\section{Operação Monoastável}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 13 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Operação Monoastável}}
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=0.9\textwidth]{mono.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 14 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Formas de ondas Monoastáveis típicas}}
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=0.8\textwidth]{mono2.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 15 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Duração do impulso de Saída vs capacitância}}
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=0.8\textwidth]{mono3.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\section{Aplicações}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 16 >
+% ---------------------------------------------------------------------------- %
+\subsection{Torneiras automáticas}
+\begin{frame} 
+\frametitle{\textbf{Temporizadores}}
+	Torneiras automáticas.
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=0.8\textwidth]{ap-mono.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 17 >
+% ---------------------------------------------------------------------------- %
+\subsection{Portas automáticas}
+\begin{frame} 
+\frametitle{\textbf{Temporizadores}}
+	Portas Automáticas.
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=0.8\textwidth]{ap-mono2.png}\\
+	%\tiny{Maceió}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 19 >
+% ---------------------------------------------------------------------------- %
+\subsection{Sistema de Irrigação Automatizado}
+\begin{frame} 
+\frametitle{\textbf{Temporizadores}}
+	Sistema de Irrigação Automatizado.
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=1 \textwidth]{ap-mono3.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\section{Operação Astável}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+% slide 21 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Circuito N555}}
+	\hspace*{-0.6cm}
+	%\centering
+	\includegraphics[width=1.1\textwidth]{astable-t0mais.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\subsection{equação do circuito interno}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 22 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\begin{block}{Divisor de tensão:}
+\begin{equation}
+ V_1=\frac{V_{cc}R}{R+R+R}=\frac{V_{cc}}{3}=\frac{5}{3}\approx1.67
+\end{equation}
+\end{block}
+\pause
+\begin{block}{Divisor de tensão:}
+\begin{equation}
+ V_2=\frac{V_{cc}2R}{3R}=\frac{2V_{cc}}{3}=\frac{2(5)}{3}\approx 3.33
+\end{equation}
+\end{block}
+\pause
+A tensão $V_1$ e $V_2$ não varia com o tempo.
+\end{frame}
+% ---------------------------------------------------------------------------- %
+\subsection{Amplificador}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 23 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{\centering{Amplificador}}}
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=1\textwidth]{astable-t0mais.png}\\
+	%\tiny{$ V_o=Ad(V_1_V2)$}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+% slide 24>
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\transboxout
+\frametitle{\textbf{\centering{Amplificador}}}
+	%\hspace*{-4cm}
+	\centering
+	\includegraphics[width=0.6\textwidth]{aop.png}\\
+	%\tiny{$ V_o=Ad(V_1_V2)$}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+\subsection{Flip-Flop SR}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 24 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{\centering Flip-Flop SR}}
+	%\hspace*{-0.6cm}
+	\centering
+	\includegraphics[width=0.8\textwidth]{latch.png}\\
+	%\tiny{fonte: https://learn.sparkfun.com/tutorials/logicblocks-experiment-guide/6-sr-latch}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\subsection{Tabela verdade}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 25 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Tabela verdade}}}
+	%\hspace*{-0.8cm}
+	\centering
+	\includegraphics[width=0.8\textwidth]{tabela-verdade.png}\\
+	%\tiny{Maceió}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\section{Configuração astable}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 27 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Configuração astable}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-t0mais.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 28 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Logo ao ligar o circuito}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-t0mais.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 29 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Primeiro pluso (comparador 1)}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-pulso1.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 30 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Segundo pluso (comparador 2)}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-pulso2.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 31 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Terceiro pluso (comparador 1)}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-pulso3.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 31 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Descarga do capacitor}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-grafico.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+\subsection{equação de carga do capacitor}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 33 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{equação de carga do capacitor}}
+	\begin{block}{Divisor de tensão}
+	\begin{equation}
+	 V_c(J\omega)=\frac{V_{cc}\frac{1}{J\omega C}}{R_1+R_2+\frac{1}{J\omega C}}=\frac{1}{J\omega C (R_1+R_2)+1}
+	\end{equation}
+	\end{block}
+	\pause
+	\begin{block}{Se $J\omega = S $ temos:}
+	\begin{equation}
+	 V_c(S)=\frac{V_{cc}}{SC(R_1+R_2)+1}=V_{cc}\frac{\frac{1}{C(R_1+R_2)}}{S+ \frac{1}{C(R_1+R_2)}}
+	\end{equation}
+	\end{block}
+	\pause
+	\begin{block}{Para entrada degrau com amplitude $A$:}
+	\begin{equation}
+	 V_c(S)=\frac{1}{C(R_1+R_2)}\left[\frac{A}{S\left(S+\frac{1}{C(R_1+R_2)}\right)}\right]
+	\end{equation}
+	\end{block}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 35 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{equação de carga do capacitor}}
+	\begin{block}{}
+	 \begin{equation}
+	 V_c(S)=\frac{1}{C(R_1+R_2)}\left[\frac{A}{S\left(S+\frac{1}{C(R_1+R_2)}\right)}\right]
+	\end{equation}
+	\end{block}
+	\pause
+	\begin{block}{Tabela Laplace:}
+	\begin{equation}
+	 \mathscr{L} \left\{1-e^{-at}\right\}  =   \frac{a}{s(s+a)}
+	\end{equation}
+	\end{block}
+	\pause
+	\begin{block}{Resposta no tempo.}
+	\begin{equation}
+	\label{eq:carga}
+	 v_c(t)=A\left\{1-e^{-\left(\frac{1}{C(R_1+R_2)}\right)t}\right\}
+	\end{equation}
+	\end{block}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\subsection{TH tempo em alto}
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% slide 3x >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+%\transboxin
+%\transblindshorizontal
+\frametitle{\textbf{Calculando do TH}}
+Para Calcular o  tempo de carregamento basta igual a equação \ref{eq:carga} com $\frac{2}{3}V_{cc}$
+\begin{block}{}
+         \begin{equation}
+	 \frac{2}{3}V_{cc}=V_{cc}\left\{1-e^{-\left(\frac{1}{C(R_1+R_2)}\right)t}\right\}
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{}
+	\begin{equation}
+	 \frac{2}{3}-1=\left\{-e^{-\left(\frac{1}{C(R_1+R_2)}\right)t}\right\}
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{}
+	\begin{equation}
+	 \frac{1}{3}=e^{-\left(\frac{1}{C(R_1+R_2)}\right)t}
+	\end{equation}
+\end{block}	
+
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 3x >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+ \frametitle{\textbf{Carregando capacitor}}
+\begin{block}{}	
+	\begin{equation}
+	 ln\left(\frac{1}{3}\right)={-\left(\frac{1}{C(R_1+R_2)}\right)t}
+	\end{equation}
+\end{block}
+\pause
+ \begin{block}{tempo total para carregar o capacitor:}
+	\begin{equation}
+	 t=C(R_1+R_2)ln (3)
+	\end{equation}
+\end{block}		
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 3x >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Descarga do capacitor}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-grafico.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 3x >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+ \frametitle{\textbf{Calculando tempo de caraga inicial}}
+ \begin{block}{tempo para $v_c= \frac{1}{3}V_{cc}$}
+ \begin{equation}
+	 \frac{1}{3}V_{cc}=V_{cc}\left\{1-e^{-\left(\frac{1}{C(R_1+R_2)}\right)t_0}\right\}
+	\end{equation}
+\end{block}	
+\pause
+\begin{block}{}
+ \begin{equation}
+	 \frac{1}{3}-1=\left\{-e^{-\left(\frac{1}{C(R_1+R_2)}\right)t_0}\right\}
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{}
+	\begin{equation}
+	 -\frac{2}{3}=-e^{-\left(\frac{1}{C(R_1+R_2)}\right)t_0}
+	\end{equation}
+\end{block}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+% slide 3x >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{Calculando tempo de caraga inicial}}
+\begin{block}{}
+	\begin{equation}
+	 ln\left(\frac{2}{3}\right)={-\left(\frac{1}{C(R_1+R_2)}\right)t_0}
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{tempo para $v_c $ chegar a $\frac{1}{3}V_{cc}$}
+	\begin{equation}
+	 t_0=C(R_1+R_2)ln\left(\frac{3}{2}\right)
+	\end{equation}
+\end{block}
+	
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 3x >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Descarga do capacitor}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-grafico.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 38 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+ \frametitle{\textbf{TH}}
+ \begin{block}{Tempo em que a saída permanece em alto:}
+ \begin{equation}
+	TH=t-t_0 =C(R_1+R_2)ln(3)-C(R_1+R_2)ln\left(\frac{3}{2}\right)
+	\end{equation}
+\end{block}	
+\pause
+ \begin{block}{}
+ \begin{equation}
+	TH=C(R_1+R_2)[ln(3)-ln(3)+ln(2)]
+	\end{equation}
+\end{block}
+\pause
+	\begin{block}{Equação do tempo de carga do capacitor}
+	\begin{equation}
+	TH=C(R_1+R_2)ln(2)
+	\end{equation}
+	\end{block}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+\subsection{ Descarga do capacitor}
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Descarga do capacitor}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-grafico.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+
+% ---------------------------------------------------------------------------- %
+% slide 39 >
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Descarga do capacitor}}
+	\begin{block}{Lei das malhas.}
+	\begin{equation}
+	V_c=V_r=iR_2
+	\end{equation}
+\end{block}	
+\pause
+\begin{block}{A corrente que sai do capacitor é $i(t)=-\frac{dq}{dt}$}
+	\begin{equation}
+	V_c=\frac{q}{c}=-R_2\frac{dq}{dt}
+	\end{equation}
+\end{block}	
+\pause
+\begin{block}{Laplace}
+	\begin{equation}
+	\frac{Q(s)}{c}=-R_2sQ(s)+R_2sQ(0)
+	\end{equation}
+\end{block}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 40 >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{Descarga do capacitor}}
+\begin{block}{}
+	\begin{equation}
+	Q(s)=Q(0)\frac{1}{s+\frac{1}{R_2c}}
+	\end{equation}
+\end{block}	
+\pause
+\begin{block}{Resposta no tempo}
+	\begin{equation}
+	\label{eq:Descarga}
+	v_c(t)=v_c(0)\left\{e^{-\left(\frac{t}{CR_2}\right)}\right\}
+	\end{equation}
+	\end{block}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+% slide 3x >
+% ---------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{\textbf{\centering{Descarga do capacitor}}}
+	\hspace*{-0.8cm}
+	\includegraphics[width=1.0\textwidth]{astable-grafico.png}\\
+	\tiny{Simulador falstad}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+\subsection{TR tempo em baixo}
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Tr}}
+A tensão $v_0(0) =\frac{2}{3}V_{cc}$ e o capacitor descarrega até $\frac{1}{3}V_{cc}$\\
+\begin{block}{subistituido na equação (\ref{eq:Descarga});}
+\begin{equation}
+	 \frac{1}{3}V_{cc}=\frac{2}{3}V_{cc}\left\{e^{-\left(\frac{tr}{CR_2}\right)}\right\}
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{}
+	\begin{equation}
+	 ln(1/2)=-\frac{tr}{cR_2}
+	\end{equation}
+\end{block}	
+	\pause
+	\begin{block}{tempo de Descarga:}
+	\begin{equation}
+	 tr=cR_2ln(2)
+	\end{equation}
+	\end{block}
+\end{frame}
+% ---------------------------------------------------------------------------- %
+\subsection{Considerações}
+% ---------------------------------------------------------------------------- %
+\begin{frame} 
+\frametitle{\textbf{Conclusão}}
+\begin{block}{ Período:}
+	\begin{equation}
+	P=TH+TR=C(R_1+R_2)ln(2)+CR_2ln(2)
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{ Período:}
+	\begin{equation}
+	P=C(R_1+2R_2)ln2
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{Frequência}
+	\begin{equation}
+	f=\frac{1}{P}=\frac{1}{C(R_1+2R_2)ln2}
+	\end{equation}
+\end{block}	
+\end{frame}
+
+\section{Aplicação medidor de capacitância}
+
+% ---------------------------------------------------------------------------- %
+
+\begin{frame}
+\frametitle{\textbf{\centering{Esquema de ligação}}}
+	%\hspace*{-0.8cm}
+	\centering
+	\includegraphics[width=1 \textwidth]{astable-grafico.png}\\
+	
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{\centering{Equação}}}
+\begin{block}{tempo de carregamento}
+\begin{equation}
+	TH=C(R_1+R_2)ln(2)
+	\end{equation}
+\end{block}
+\pause
+\begin{block}{capacitância}
+	\begin{equation}
+	C=\frac{TH}{(R_1+R_2)ln(2)}
+	\end{equation}
+\end{block}
+\pause
+	\begin{block} {para $R_1 = 1k; R_2=10k$ }
+	  \begin{equation}
+	  C=\frac{TH}{(11000)ln(2)}
+	  \end{equation}
+	\end{block}
+\end{frame}
+
+\section{Arduino}
+\begin{frame}
+\frametitle{\textbf{\centering{Função}}}
+\begin{block}{função}
+THtime=pulseIn(8,HIGH);
+\end{block}
+\begin{block}{Saída}
+\includegraphics[width=0.8\textwidth]{pulso.png}\\
+\end{block}
+
+\end{frame}
+% ---------------------------------------------------------------------------- %
+{%\usebackgroundtemplate{}} 
+\begin{frame}[plain]
+	\begin{columns}[c]
+		\column{0.2\textwidth}
+			\hspace*{+0.5em}
+			\includegraphics[height=7.90cm]{rede.jpg}
+		\column{0.01\textwidth}
+		\column{0.70\textwidth}
+			\titlepage
+	\end{columns}
+	\addtocounter{framenumber}{-1}
+\end{frame}
+}
+
+\end{document}
+
