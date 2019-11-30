@@ -1,2 +1,2 @@
 # ApresentacaoN555
-essa é uma apresentação feita em latex ci n555
+Essa é uma apresentação feita em latex
